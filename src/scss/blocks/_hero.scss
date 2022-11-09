@@ -17,6 +17,10 @@ $bg-img: "../../assets/HeroImage.png";
 
     @media(min-width: 1250px){
         display: block;
+        width: 40%;
+    }
+
+    @media(min-width: 1650px){
         width: 50%;
     }
 }
@@ -25,7 +29,11 @@ $bg-img: "../../assets/HeroImage.png";
     width: 100%;
 
     @media(min-width: 1250px){
-        width: 50%;
+        width: 60%;
         padding-right: 100px;
+    }
+
+    @media(min-width: 1650px){
+        width: 50%;
     }
 }
