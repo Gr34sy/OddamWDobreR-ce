@@ -2,3 +2,16 @@
     padding-top: 50px;
     display: flex;
 }
+
+.main__left{
+    width: 50%;
+
+    .hero-pic{
+        width: 100%;
+    }
+}
+
+.main__right{
+    width: 50%;
+    padding-right: 100px;
+}
