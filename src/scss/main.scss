@@ -1,8 +1,11 @@
+//misc
 @import './misc/reset';
 @import './misc/fonts';
+@import './misc/colors';
+@import './misc/general';
 
-body{
-    background-color: grey;
-    
-   
-}
+//blocks
+@import './blocks/hero';
+@import './blocks/navbar';
+
+//elements
