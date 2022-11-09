@@ -1,26 +1,46 @@
 .navbar{
     width: 100%;
     background-color: $color-yellow;
-    min-height: 100px;
+    height: 100px;
+    text-align: center;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
 
     a{
         text-decoration: none;
         color: $color-black;
     }
 
-    @media (min-width: 750px) {
+    @media (min-width: 1250px) {
         background-color: inherit;
+
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
     }
+}
+
+.mobileIcon__figure{
+    @media (min-width: 1250px){
+        display: none;
+    }
+
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: $color-white;
+}
+
+
+.navMobileIcon{
+    width: 95%;
 }
 
 .logging-buttons{
     display: none;
 
-    @media (min-width: 750px) {
+    @media (min-width: 1250px) {
         display: flex;
         gap: 15px;
         font-size: 0.875rem; 
@@ -41,23 +61,35 @@
 .navlist{
     display: none;
 
-    @media (min-width: 750px) {
+    li:first-child{
+        border: 1px solid $color-black;
+    }
+
+    li{
+        cursor: pointer;
+        border: 1px solid transparent;
+
+        &:hover{
+            border-color: $color-black;
+        }
+    }
+
+    @media(min-width: 1250px){
         display: flex;
+        align-items: center;
+
+        li{
+            padding: 10px 10px;
+
+        }
+    }
+
+    @media (min-width: 1450px) {
         gap: 15px;
         font-size: 1.125rem; 
 
         li{
             padding: 10px 25px;
-            cursor: pointer;
-            border: 1px solid transparent;
-
-            &:hover{
-                border-color: $color-black;
-            }
-        }
-
-        li:first-child{
-            border: 1px solid $color-black;
         }
     }
 }

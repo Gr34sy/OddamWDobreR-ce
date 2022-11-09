@@ -1,17 +1,31 @@
+$bg-img: "../../assets/HeroImage.png";
+
 .hero__main{
-    padding-top: 50px;
     display: flex;
+
+    @media(min-width: 1250px){
+        padding-top: 50px;
+    }
 }
 
 .main__left{
-    width: 50%;
+    display: none;
+    background-image: url($bg-img);
+    background-position: top right;
+    background-size: cover;
+    height: 800px;
 
-    .hero-pic{
-        width: 100%;
+    @media(min-width: 1250px){
+        display: block;
+        width: 50%;
     }
 }
 
 .main__right{
-    width: 50%;
-    padding-right: 100px;
+    width: 100%;
+
+    @media(min-width: 1250px){
+        width: 50%;
+        padding-right: 100px;
+    }
 }
