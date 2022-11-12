@@ -1,0 +1,15 @@
+.button{
+    text-decoration: none;
+    color: $color-black;
+    border: 1px solid $color-black;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+.button--big{
+    font-size: 2rem;
+    width: 330px;
+    padding-block: 0.8rem;
+}

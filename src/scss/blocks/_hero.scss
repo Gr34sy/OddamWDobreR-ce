@@ -37,3 +37,31 @@ $bg-img: "../../assets/HeroImage.png";
         width: 50%;
     }
 }
+
+.hero__description{
+    display: none;
+
+    @media(min-width: 1250px){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding: 15rem 0;
+    }
+}
+
+.hero__title{
+    font-size: 2.375rem;
+}
+
+.hero__button-box{
+    margin-top: 60px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
