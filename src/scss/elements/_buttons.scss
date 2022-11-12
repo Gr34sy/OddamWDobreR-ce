@@ -8,6 +8,19 @@
     font-weight: lighter;
 }
 
+.button--mobile{
+    display: block;
+    width: 130px;
+    padding: 15px;
+    color: $color-white;
+    background-color: $color-yellow;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
 .button--big{
     font-size: 2rem;
     width: 330px;

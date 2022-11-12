@@ -23,6 +23,47 @@ export function Hero(){
                         <a href="#" className="button button--big">Zorganizuj  <br/> zbiórkę</a>
                     </div>
                 </div>
+
+                <div className="hero__description--mobile">
+                    <h1 className="hero__title--mobile">
+                        Zacznij pomagać!<br/>
+                        Oddaj niechciane rzeczy w zaufane ręce
+                    </h1>
+
+                    <div className="hero__stats--mobile">
+                        <div className="hero__stat">
+                            <div>
+                                0
+                            </div>
+                            <p>
+                                wspartych organizacji
+                            </p>
+                        </div>
+
+                        <div className="hero__stat">
+                            <div>
+                                0
+                            </div>
+                            <p>
+                                oddanych worków
+                            </p>
+                        </div>
+
+                        <div className="hero__stat">
+                            <div>
+                                0
+                            </div>
+                            <p>
+                                zorganizowanych zbiórek
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div className="hero__button-box--mobile">
+                        <a href="#" className="button--mobile">oddaj rzeczy</a>
+                        <a href="#" className="button--mobile">zorganizuj zbiórkę</a>
+                    </div>
+                </div>
             </div>
         </main>
         <Footer/>
