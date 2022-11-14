@@ -1,12 +1,18 @@
 import React from "react";
 import decoration from "../assets/Decoration.svg";
-import RecycleIcon from "../assets/RecycleIcon.png";
-import LensIcon from "../assets/LensIcon.png";
-import BagIcon from "../assets/BagIcon.png";
-import ShirtIcon from "../assets/ShirtIcon.png";
+import recycleIcon from "../assets/RecycleIcon.png";
+import lensIcon from "../assets/LensIcon.png";
+import bagIcon from "../assets/BagIcon.png";
+import shirtIcon from "../assets/ShirtIcon.png";
+
+import handIcon from "../assets/HandIcon.png";
+import boxIcon from "../assets/BoxIcon.png";
+import clickIcon from "../assets/ClickIcon.png";
+import calendarIcon from "../assets/CalendarIcon.png";
 
 export function SimpleSteps(){
     return(
+        <>
         <section className="simple-steps">
             <h2 className="steps__title">
                 Wystarczą 4 proste kroki
@@ -18,7 +24,7 @@ export function SimpleSteps(){
             <div className="steps__box">
                 <div className="step">
                     <figure>
-                        <img src={ShirtIcon} alt="shirt icon"/>
+                        <img src={shirtIcon} alt="shirt icon"/>
                     </figure>
 
                     <h3 className="step__title">Wybierz rzeczy</h3>
@@ -30,7 +36,7 @@ export function SimpleSteps(){
 
                 <div className="step">
                     <figure>
-                        <img src={BagIcon} alt="bag icon"/>
+                        <img src={bagIcon} alt="bag icon"/>
                     </figure>
 
                     <h3 className="step__title">Spakuj je</h3>
@@ -42,7 +48,7 @@ export function SimpleSteps(){
 
                 <div className="step">
                     <figure>
-                        <img src={LensIcon} alt="lens icon"/>
+                        <img src={lensIcon} alt="lens icon"/>
                     </figure>
 
                     <h3 className="step__title">Zdecyduj komu chcesz pomóc</h3>
@@ -54,7 +60,7 @@ export function SimpleSteps(){
 
                 <div className="step">
                     <figure>
-                        <img src={RecycleIcon} alt="recycling icon"/>
+                        <img src={recycleIcon} alt="recycling icon"/>
                     </figure>
 
                     <h3 className="step__title">Zamów kuriera</h3>
@@ -67,5 +73,53 @@ export function SimpleSteps(){
 
             <a href="#" className="button button--big">Oddaj  <br/> Rzeczy</a>
         </section>
+         
+         {/* mobile view */}
+        <section className="simple-steps--mobile">
+            <h2 className="steps__title--mobile">Wystarczą 4 proste kroki</h2>
+
+            <div className="steps__box--mobile">
+                <div className="step--mobile">
+                    <figure>
+                        <img src={handIcon} alt="hand icon" />
+                    </figure>
+
+                    <p className="step__description--mobile">
+                        Wybierz rzeczy do oddania
+                    </p>
+                </div>
+
+                <div className="step--mobile">
+                    <figure>
+                        <img src={boxIcon} alt="box icon" />
+                    </figure>
+
+                    <p className="step__description--mobile">
+                        Spakuje je
+                    </p>
+                </div>
+
+                <div className="step--mobile">
+                    <figure>
+                        <img src={clickIcon} alt="click icon" />
+                    </figure>
+
+                    <p className="step__description--mobile">
+                        Zdecyduj komu chcesz pomóc
+                    </p>
+                </div>
+
+                <div className="step--mobile">
+                    <figure>
+                        <img src={calendarIcon} alt="calendar icon" />
+                    </figure>
+
+                    <p className="step__description--mobile">
+                        Zamów kuriera w dogodnym terminie
+                    </p>
+                </div>
+            </div>
+        </section>
+        </>
     )
 }
