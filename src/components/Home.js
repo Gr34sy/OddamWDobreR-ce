@@ -2,6 +2,7 @@ import React from "react";
 import { Hero } from "./Hero";
 import {ThreeColumns} from "./ThreeColumns";
 import { SimpleSteps } from "./SimpleSteps";
+import { AboutUs } from "./AboutUs";
 
 export function Home(){
     return(
@@ -9,6 +10,7 @@ export function Home(){
         <Hero/>
         <ThreeColumns/>
         <SimpleSteps/>
+        <AboutUs/>
         </>
     )
 }

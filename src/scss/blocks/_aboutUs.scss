@@ -1,0 +1,44 @@
+$right-bg: '../../assets/People.png';
+
+.about-us{
+    display: none;
+
+    @media(min-width: 1250px){
+        display: flex;
+        width: 100%;
+    }
+}
+
+.about-us__left, .about-us__right{
+    width: 50%;
+    height: 80vh;
+}
+
+.about-us__left{
+    background-color: $color-grey-opacity;
+    text-align: center;
+    color: $color-black;
+    padding-inline: 9rem;
+    padding-top: 6rem;
+}
+
+.about-us__title{
+    padding-bottom: 15px;
+}
+
+.about-us__description{
+    font-size: 1.9rem;
+    padding-block: 2rem;
+}
+
+.about-us__right{
+    background-image: url($right-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.signature-img{
+    width: 180px;
+    margin-left: 65%;
+}

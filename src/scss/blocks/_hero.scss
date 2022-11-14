@@ -111,14 +111,14 @@ $bg-img: "../../assets/HeroImage.png";
        align-items: center;
        justify-content: center;
 
-       color: yellow;
+       color: $color-black;
        font-size: 2rem;
        font-weight: bolder;
     }
 
     p{
         margin-top: 15px;
-        color: white;
+        color: $color-white;
         font-weight: bolder;
     }
 }

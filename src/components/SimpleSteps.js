@@ -14,7 +14,7 @@ export function SimpleSteps(){
     return(
         <>
         <section className="simple-steps">
-            <h2 className="steps__title">
+            <h2 className="section-title steps__title">
                 Wystarczą 4 proste kroki
             </h2>
             <figure>
