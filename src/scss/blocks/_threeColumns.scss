@@ -16,9 +16,13 @@ $three-columns-bg: '../../assets/3 Columns Background.png';
 .col-box{
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 120px;
 
     text-align: center;
+}
+
+.col{
+    width: 300px;
 }
 
 .col__number{
