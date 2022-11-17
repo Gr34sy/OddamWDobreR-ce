@@ -31,10 +31,10 @@ $contact-bg: '../../assets/Contact Bg.png';
 .contact__container{
     position: relative;
     text-align: center;
-    width: 40%;
+    width: 45%;
     color: $color-black;
 
-    padding: 200px 20px;
+    padding: 200px 50px;
 }
 
 .contact__title{
@@ -50,14 +50,49 @@ $contact-bg: '../../assets/Contact Bg.png';
     justify-content: flex-start;
     align-items: center;
     gap: 40px;
+
+    label{
+        font-weight: bolder;
+        color: $color-black;
+        font-size: 1rem; 
+        text-align: left;
+    }
 }
 
 .form__small-inputs{
+    width: 100%;
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+}
+
+.form__label{
+    width: 45%;
 }
 
 .form__input{
     display: block;
+    width: 100%;
+    font-size: 1.1rem;
+    background-color: transparent;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid $color-grey;
 }
+
+.label--message{
+    width: 100%;
+
+    input,textarea{
+        display: block;
+        width: 100%;
+        font-family: $font-base;
+        font-size: 1rem;
+        resize: none;
+    }
+}
+
+.button--form{
+    align-self: flex-end;
+}
+
 
