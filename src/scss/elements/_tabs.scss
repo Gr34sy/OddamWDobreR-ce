@@ -41,17 +41,11 @@
 .content{
     display: none;
     min-height: 450px;
-
-    margin-top: 70px;
-
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
+    padding-top: 50px;
 }
 
 .content--active{
-    display: flex;
+    display: block;
 }
 
 .content__description{
@@ -83,6 +77,7 @@
 
 .details__left{
     width: 60%;
+    text-align: left;
 }
 
 .details__right{
@@ -102,3 +97,39 @@
     text-align: right;
 }
 
+
+//pagination
+.page{
+    width: 100%;
+    min-height: 450px;
+    
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.page--active{
+    display: flex;
+}
+
+.pagination-box{
+    display: flex;
+    gap: 10px;
+    font-size: 2rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.page-number{
+    width: 60px;
+    padding-block: 1rem;
+    font-size: 2rem;
+    border: 1px solid transparent;
+}
+
+.page-number--active, .page-number:hover{
+    border-color: $color-black;
+    cursor: pointer;
+}
