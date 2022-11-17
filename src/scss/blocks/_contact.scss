@@ -4,8 +4,7 @@ $contact-bg: '../../assets/Contact Bg.png';
     display: none;
 
     @media (min-width: 1250px){
-        display: flex;
-        justify-content: flex-end;
+        display: block;
         position: relative;
         width: 100%;
         height: 90vh;
@@ -14,6 +13,8 @@ $contact-bg: '../../assets/Contact Bg.png';
         background-image: url($contact-bg);
         background-position: top center;
         background-size: cover;
+
+        padding-top: 200px;
     }
 }
 
@@ -29,12 +30,12 @@ $contact-bg: '../../assets/Contact Bg.png';
 
 
 .contact__container{
+    margin-left: auto;
     position: relative;
     text-align: center;
     width: 45%;
     color: $color-black;
-
-    padding: 200px 50px;
+    padding-inline: 50px;
 }
 
 .contact__title{

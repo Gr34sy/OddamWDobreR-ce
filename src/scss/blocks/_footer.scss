@@ -1,0 +1,28 @@
+.footer{
+    font-size: 1.1rem;
+    color: $color-black;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+
+    padding-top: 120px;
+    padding-inline: 80px;
+}
+
+.footer__description{
+    text-align: center;
+    width: 95%;
+}
+
+.footer__socials{
+    a{
+        display: block;
+    }
+
+    display: flex;
+    gap: 10px;
+}
