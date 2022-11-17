@@ -1,0 +1,63 @@
+$contact-bg: '../../assets/Contact Bg.png';
+
+.contact{
+    display: none;
+
+    @media (min-width: 1250px){
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        width: 100%;
+        height: 90vh;
+
+        position: relative;
+        background-image: url($contact-bg);
+        background-position: top center;
+        background-size: cover;
+    }
+}
+
+.contact::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255, 0.55);
+}
+
+
+.contact__container{
+    position: relative;
+    text-align: center;
+    width: 40%;
+    color: $color-black;
+
+    padding: 200px 20px;
+}
+
+.contact__title{
+    padding-bottom: 10px;
+}
+
+.contact-form{
+    min-height: 350px;
+    padding-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+}
+
+.form__small-inputs{
+    display: flex;
+    gap: 20px;
+}
+
+.form__input{
+    display: block;
+}
+

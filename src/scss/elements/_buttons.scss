@@ -27,3 +27,15 @@
     width: 330px;
     padding-block: 0.8rem;
 }
+
+.button--middle{
+    text-transform: capitalize;
+    font-family: $font-base;
+    font-weight: normal;
+    font-size: 0.8rem;
+    padding-block: 1rem;
+    padding-inline: 4rem;
+    color: $color-black;
+    background-color: $color-white;
+    border: 1px solid $color-black;
+}

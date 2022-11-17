@@ -4,6 +4,7 @@ import {ThreeColumns} from "./ThreeColumns";
 import { SimpleSteps } from "./SimpleSteps";
 import { AboutUs } from "./AboutUs";
 import { Help } from "./Help";
+import { Contact } from "./Contact";
 
 export function Home(){
     return(
@@ -13,6 +14,7 @@ export function Home(){
         <SimpleSteps/>
         <AboutUs/>
         <Help/>
+        <Contact/>
         </>
     )
 }
