@@ -1,10 +1,7 @@
 $contact-bg: '../../assets/Contact Bg.png';
 
 .contact{
-    display: none;
-
     @media (min-width: 1250px){
-        display: block;
         position: relative;
         width: 100%;
         height: 90vh;
@@ -19,23 +16,30 @@ $contact-bg: '../../assets/Contact Bg.png';
 }
 
 .contact::before{
-    content:'';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255,255,255, 0.55);
+
+    @media(min-width:1250px){
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255,255,255, 0.55);
+    }
 }
 
 
 .contact__container{
-    margin-left: auto;
-    position: relative;
-    text-align: center;
-    width: 45%;
-    color: $color-black;
-    padding-inline: 50px;
+    display: none;
+    @media(min-width:1250px){
+        display: block;
+        margin-left: auto;
+        position: relative;
+        text-align: center;
+        width: 45%;
+        color: $color-black;
+        padding-inline: 50px;
+    }
 }
 
 .contact__title{

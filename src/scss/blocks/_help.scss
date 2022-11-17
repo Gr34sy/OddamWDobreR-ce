@@ -1,11 +1,11 @@
 .help{
-    min-height: 80vh;
     width: 100%;
     padding: 0 15px;
     text-align: center;
 
     @media (min-width:1250px) {
         padding: 100px 80px;
+        min-height: 80vh;
     }
 }
 

@@ -66,7 +66,6 @@ export function Hero(){
                 </div>
             </div>
         </main>
-        <Footer/>
         </>
     )
 }
