@@ -81,6 +81,12 @@ $contact-bg: '../../assets/Contact Bg.png';
     border-bottom: 1px solid $color-grey;
 }
 
+.form__error{
+    color: $color-red;
+    height: 20px;
+    text-transform: capitalize;
+}
+
 .label--message{
     width: 100%;
 
