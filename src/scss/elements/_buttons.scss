@@ -39,3 +39,19 @@
     background-color: $color-white;
     border: 1px solid $color-black;
 }
+
+.button--small{
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-family: $font-base;
+    font-size: 1.1rem;
+    font-weight: lighter;
+    color: $color-black;
+    text-transform: capitalize;
+}
+
+
+input.button--small{
+    border: 1px solid $color-black;
+    padding: 5px 20px;
+}

@@ -1,0 +1,54 @@
+.logging-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+    padding-bottom: 0;
+    height: 74vh;
+}
+
+
+.navbar--logging{
+    padding: 50px 50px 0 0;
+}
+
+.logging__form{
+    padding-top: 40px;
+}
+
+.logging__input{
+    display: block;
+    margin-top: 5px;
+    padding: 5px 2px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-black;
+}
+
+.logging__label{
+    padding: 25px 80px;
+    background-color: $color-grey-opacity;
+    display: block;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: $color-black;
+    font-weight: 600;
+
+    &:first-of-type{
+        padding-top: 50px;
+    }
+
+    &:last-of-type{
+        padding-bottom: 50px;
+    }
+}
+
+.logging__buttons{
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-top: 50px;
+    background-color: $color-white;
+}
