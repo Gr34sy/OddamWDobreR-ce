@@ -12,7 +12,6 @@ export function ContactForm(){
 
     //statusy errorów i sukcesu
     const INITIAL_ERRORS = {
-        showError: false,
         errorName: '',
         errorEmail: '',
         errorMessage: ''
@@ -62,32 +61,18 @@ export function ContactForm(){
 
         if(data.status==='error'){
             const dataErrors = [];
-            setErrors({
-                ...errors, showError: true
-            });
-
             data.errors.forEach(element => {
                 dataErrors.push(element.param)
             });
-
-
-            if(dataErrors.includes('name')){
-                setErrors({
-                    ...errors, errorName: 'Podane imię jest nieprawidłowe!'
-                })
-            }
-            if(dataErrors.includes('email')){
-                setErrors({
-                    ...errors, errorEmail: 'Podany email jest nieprawidłowy!'
-                })
-            }
-            if(dataErrors.includes('message')){
-                setErrors({
-                    ...errors, errorMessage: 'Wiadomość musi mieć conajmniej 120 znaków!'
-                })
-            }
+            
+            setErrors(
+                {
+                    errorName: dataErrors.includes('name') ? 'Podane imię jest nieprawidłowe!': '',
+                    errorEmail: dataErrors.includes('email') ? 'Podany email jest nieprawidłowy!': '',
+                    errorMessage: dataErrors.includes('message') ? 'Wiadomość musi mieć conajmniej 120 znaków!': ''
+                }
+            )
         }
-       
 
     },[data]);
 
@@ -100,13 +85,13 @@ export function ContactForm(){
                 <label htmlFor="name" className="form__label">
                     Wpisz swoje imię
                     <input type="text" name="name" placeholder="Krzysztof" className="form__input" value={inputValue.name} onChange={handleChange}/>
-                    {errors.showError && errors.errorName && <p className="form__error">{errors.errorName}</p>}
+                    { errors.errorName && <p className="form__error">{errors.errorName}</p>}
                 </label>
 
                 <label htmlFor="email" className="form__label">
                     Wpisz swój email
                     <input type="text" name="email" placeholder="abc@xyz.pl" className="form__input" value={inputValue.email} onChange={handleChange}/>
-                    {errors.showError && errors.errorEmail && <p className="form__error">{errors.errorEmail}</p>}
+                    { errors.errorEmail && <p className="form__error">{errors.errorEmail}</p>}
                 </label>
             </div>
 
@@ -117,7 +102,7 @@ export function ContactForm(){
                 className="form__input input--message"
                 value={inputValue.message}
                 onChange={handleChange}/>
-                {errors.showError && errors.errorMessage && <p className="form__error">{errors.errorMessage}</p>}
+                {errors.errorMessage && <p className="form__error">{errors.errorMessage}</p>}
             </label>
 
             <input type="submit" className="button button--middle button--form" value="Wyślij"/>

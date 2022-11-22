@@ -57,43 +57,6 @@ export function Register(){
         }
     }
 
-    // const emailValidation = () =>{
-    //     if(inputValue.email.includes('@')){
-    //        return true;
-    //     }else{
-    //         setErrors({
-    //           ...errors,
-    //           email: 'Niepoprawny email!'
-    //         })
-    //       return false;
-    //     }
-    // }
-
-    // const passwordValidation = () =>{
-    //     if(inputValue.password>=6){
-    //         return true;
-    //     }else{
-    //         setErrors({
-    //             ...errors,
-    //             password: 'Niepoprawne hasło!'
-    //         })
-    //         return false;
-    //     }
-    // }
-
-    // const repeatPasswordValidation = () =>{
-    //     if(inputValue.repeatPassword===inputValue.repeatPassword){
-    //         return true;
-    //     }else{
-    //         setErrors({
-    //             ...errors,
-    //             repeatPassword: 'Hasła się nie zgadzają!'
-    //         })
-    //         return false;
-    //     }
-    // }
-
-
     //obsługa formularza
     function handleRegister(e){
         e.preventDefault();
