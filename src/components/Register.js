@@ -78,7 +78,7 @@ export function Register(){
                 <img src={decoration} alt="text decoration"/>
             </figure>
 
-            <form className="logging__form" onSubmit={handleRegister}>
+            <form className="logging__form" onSubmit={handleRegister} method="post">
                 <label htmlFor="email" className="logging__label">
                     Email
                     <input type="text" className="logging__input" name="email" value={inputValue.email} onChange={handleChange}/>

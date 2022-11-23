@@ -4,6 +4,7 @@ import { Register } from './components/Register.js';
 import { Login } from './components/Login.js';
 
 import './scss/main.scss';
+import { Logout } from './components/Logout.js';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/home' element={<Home/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
+          <Route path='/logout' element={<Logout/>}/>
         </Routes>
       </Router>
     </div>
