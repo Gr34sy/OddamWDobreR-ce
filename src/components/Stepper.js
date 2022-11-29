@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import arrowDown from '../assets/ArrowDown.png';
 import arrowUp from '../assets/ArrowUp.png';
+import recycleIcon from '../assets/SmallRecycleIcon.png';
+import shirtIcon from '../assets/SmallShirtIcon.png';
 
 export function Stepper(){
     //step state
@@ -236,8 +238,107 @@ export function Stepper(){
                                 </label>
                             </div>
                         </div>
-                    </div>
-                    }
+                    </div>}
+                    
+                    {currentStep===5 && 
+                    <div className="stepper__step step--5">
+                        <h3 className="stepper-form__title">
+                            Podsumowanie Twojej darowizny
+                        </h3>
+
+                        <p className='step__description'>
+                            Oddajesz:
+                        </p>
+
+                        <p className='stepper__summary-line summary-line--top'>
+                            <img src={shirtIcon} alt="shirt icon"/> 4 worki, ubrania w dobrym stanie, dzieciom
+                        </p>
+
+                        <p className='stepper__summary-line summary-line--top'>
+                            <img src={recycleIcon} alt="shirt icon"/> dla lokalizacji: Warszawa
+                        </p>
+
+                        <div className='step__last-box'>
+                            <div className='step__address'>
+                                <p className='step__description'>
+                                    Adres odbioru:
+                                </p>
+
+                                <div className='stepper__summary-line'>
+                                    <p>
+                                        Ulica
+                                    </p>
+                                    <p>
+                                        placeholder
+                                    </p>
+                                </div>
+
+                                <div className='stepper__summary-line'>
+                                    <p>
+                                        Miasto
+                                    </p>
+                                    <p>
+                                        placeholder
+                                    </p>
+                                </div>
+
+                                <div className='stepper__summary-line'>
+                                    <p>
+                                        Kod<br/>
+                                        pocztowy
+                                    </p>
+                                    <p>
+                                        placeholder
+                                    </p>
+                                </div>
+
+                                <div className='stepper__summary-line'>
+                                    <p>
+                                        Numer<br/>
+                                        telefonu
+                                    </p>
+                                    <p>
+                                        placeholder
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className='step__term'>
+                                <p className='step__description'>
+                                    Termin odbioru:
+                                </p>
+
+                                <div className='stepper__summary-line'>
+                                    <p>
+                                        Data
+                                    </p>
+                                    <p>
+                                        placeholder
+                                    </p>
+                                </div>
+
+                                <div className='stepper__summary-line'>
+                                    <p>
+                                        Godzina
+                                    </p>
+                                    <p>
+                                        placeholder
+                                    </p>
+                                </div>
+
+                                <div className='stepper__summary-line'>
+                                    <p>
+                                        Uwagi<br/>
+                                        dla kuriera
+                                    </p>
+                                    <p>
+                                        placeholder
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>}
                 </form>
 
                 <div className="stepper__buttons">
