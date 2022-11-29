@@ -1,0 +1,68 @@
+.label--checkbox{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 1.5rem;
+    font-family: $font-base;
+    font-weight: lighter;
+}
+
+.custom-checkbox{
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid $color-black;
+    cursor: pointer;
+}
+
+.custom-checkbox:checked{
+    background-color: $color-yellow;
+}
+
+.custom-select__box{
+    font-size: 1.5rem;
+}
+
+.custom-select{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    cursor: pointer;
+
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 300px;
+        padding: 10px;
+        border: 1px solid $color-black;
+
+        p{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &::after,&::before{
+                display: block;
+                content: '';
+                height: 1px;
+                width: 20px;
+                background-color: $color-black;
+            }
+        }
+    }
+}
+
+.bags{
+    font-weight: lighter;
+    cursor: pointer;
+    margin: 0 450px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    width: 80px;
+    height: 220px;
+    border: 1px solid $color-black;
+}
