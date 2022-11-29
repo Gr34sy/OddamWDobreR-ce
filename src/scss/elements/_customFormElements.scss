@@ -22,6 +22,7 @@
 
 .custom-select__box{
     font-size: 1.5rem;
+    position: relative;
 }
 
 .custom-select{
@@ -55,14 +56,37 @@
     }
 }
 
-.bags{
+.custom-options{
+    width: 220px;
     font-weight: lighter;
     cursor: pointer;
-    margin: 0 450px;
     padding: 10px;
     text-align: center;
     margin-top: 20px;
-    width: 80px;
-    height: 220px;
     border: 1px solid $color-black;
+    position: absolute;
+    background-color: $color-grey-opacity;
+}
+
+.options--bags{
+    margin-left: 310px;
+}
+
+.options--locations{
+    width: 300px;
+}
+
+.stepper__custom-input{
+    display: block;
+    border: 1px solid $color-black;
+    background-color: transparent;
+    padding: 5px 10px;
+}
+
+.custom-input--org{
+    width: 80%;
+}
+
+.input--final-box{
+    width: 70%;
 }

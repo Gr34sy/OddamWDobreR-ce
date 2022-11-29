@@ -61,3 +61,41 @@ $stepper-form-bg: '../../assets/StepperFormBg.png';
     font-size: 2.25rem;
     font-weight: bolder;
 }
+
+.step-help__boxes{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    input.button{
+        padding: 15px 60px;
+        text-transform: lowercase;
+    }
+}
+
+.step__description{
+    color: $color-black;
+    padding-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.step__last-box{
+    display: flex;
+    justify-content: space-between;
+
+    label{
+        font-size: 1.2rem;
+        font-weight: lighter;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+}
+
+.step__address, .step__term{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
