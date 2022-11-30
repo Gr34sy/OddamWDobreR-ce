@@ -60,6 +60,10 @@ $stepper-form-bg: '../../assets/StepperFormBg.png';
     color: $color-black;
     font-size: 2.25rem;
     font-weight: bolder;
+
+    span{
+        display: block;
+    }
 }
 
 .step-help__boxes{
