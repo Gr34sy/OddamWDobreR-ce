@@ -69,6 +69,7 @@ $stepper-form-bg: '../../assets/StepperFormBg.png';
 }
 
 .step-help__boxes{
+    width: 90%;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -79,7 +80,7 @@ $stepper-form-bg: '../../assets/StepperFormBg.png';
     }
 }
 
-.step__description{
+.stepper__step-description{
     color: $color-black;
     padding-top: 20px;
     font-size: 1.5rem;
@@ -119,4 +120,8 @@ $stepper-form-bg: '../../assets/StepperFormBg.png';
 .summary-line--top{
     width: 50%;
     justify-content: flex-start;
+}
+
+input.button.button--small.stepper__selected-btn{
+    background-color: $color-yellow;
 }

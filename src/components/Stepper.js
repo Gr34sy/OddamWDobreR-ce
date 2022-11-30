@@ -27,6 +27,36 @@ export function Stepper(){
     const [bagAmount, setBagAmount] = useState('wybierz')
     const [location, setLocation] = useState('wybierz')
 
+    const INITIAL_PEOPLE = {
+        kids: false,
+        mothers: false,
+        homeless: false,
+        disabled: false,
+        elderly: false
+    }
+    const [people, setPeople] = useState(INITIAL_PEOPLE)
+
+    const INITIAL_INPUTS = {
+        org: '',
+        street: '',
+        city: '',
+        postcode: '',
+        phone: '',
+        date: '',
+        hour: '',
+        notes: ''
+    }
+    const [inputValue, setInputValue] = useState(INITIAL_INPUTS)
+
+    function handleInput(e){
+        e.preventDefault();
+
+        setInputValue({
+            ...inputValue,
+            [e.target.name]: e.target.value
+        })
+    }
+    
     function handleCheckbox(e){
         if(e.target.checked){
             setCheckboxes({
@@ -49,6 +79,23 @@ export function Stepper(){
     function handleLocation(e){
         e.preventDefault();
         setLocation(e.target.getAttribute("data-value"));
+    }
+
+    function handlePeople(e){
+        e.preventDefault();
+
+        const name = e.target.name;
+        if(people[name]===false){
+            setPeople({
+                ...people,
+                [name]: true
+            }) 
+        }else{
+            setPeople({
+                ...people,
+                [name]: false
+            }) 
+        }
     }
 
     function stepForward(e){
@@ -201,21 +248,21 @@ export function Stepper(){
                             </div>}
                         </div>
 
-                        <p className='step__description'>
+                        <p className='stepper__step-description'>
                             Komu chcesz pomóc?
                         </p>
                         <div className='step-help__boxes'>
-                            <input type="button" className='button button--small' value="dzieciom"/>
-                            <input type="button" className='button button--small' value="samotnym matkom"/>
-                            <input type="button" className='button button--small' value="bezdomnym"/>
-                            <input type="button" className='button button--small' value="niepełnosprawnym"/>
-                            <input type="button" className='button button--small' value="osobom starszym"/>
+                            <input type="button" className={people.kids===true ? 'button button--small stepper__selected-btn' : 'button button--small'} name="kids" value="dzieciom" onClick={handlePeople}/>
+                            <input type="button" className={people.mothers ? 'button button--small stepper__selected-btn' : 'button button--small'} name="mothers" value="samotnym matkom" onClick={handlePeople}/>
+                            <input type="button" className={people.homeless ? 'button button--small stepper__selected-btn' : 'button button--small'} name="homeless" value="bezdomnym" onClick={handlePeople}/>
+                            <input type="button" className={people.disabled ? 'button button--small stepper__selected-btn' : 'button button--small'} name="disabled" value="niepełnosprawnym" onClick={handlePeople}/>
+                            <input type="button" className={people.elderly ? 'button button--small stepper__selected-btn' : 'button button--small'} name="elderly" value="osobom starszym" onClick={handlePeople}/>
                         </div>
 
-                        <p className='step__description'>
+                        <p className='stepper__step-description'>
                             Wpisz nazwę konkretnej organizacji (opcjonalnie)
                         </p>
-                        <input type="text" className='stepper__custom-input custom-input--org' />
+                        <input type="text" className='stepper__custom-input custom-input--org' name="org" value={inputValue.org} onChange={handleInput}/>
                     </div>}
                     
                     {currentStep===4 && 
@@ -226,52 +273,52 @@ export function Stepper(){
 
                         <div className='step__last-box'>
                             <div className='step__address'>
-                                <p className='step__description'>
+                                <p className='stepper__step-description'>
                                     Adres odbioru:
                                 </p>
 
                                 <label htmlFor="street">
                                     Ulica
-                                    <input type="text" name="street" className="stepper__custom-input input--final-box" />
+                                    <input type="text" name="street" className="stepper__custom-input input--final-box" value={inputValue.street} onChange={handleInput}/>
                                 </label>
 
                                 <label htmlFor="city">
                                     Miasto
-                                    <input type="text" name="city" className="stepper__custom-input input--final-box" />
+                                    <input type="text" name="city" className="stepper__custom-input input--final-box" value={inputValue.city} onChange={handleInput}/>
                                 </label>
 
                                 <label htmlFor="postcode">
                                     Kod<br/>
                                     pocztowy
-                                    <input type="text" name="postcode" className="stepper__custom-input input--final-box" />
+                                    <input type="text" name="postcode" className="stepper__custom-input input--final-box" value={inputValue.postcode} onChange={handleInput}/>
                                 </label>
 
                                 <label htmlFor="phone">
                                     Numer<br/>
                                     telefonu
-                                    <input type="text" name="phone" className="stepper__custom-input input--final-box" />
+                                    <input type="text" name="phone" className="stepper__custom-input input--final-box" value={inputValue.phone} onChange={handleInput}/>
                                 </label>
                             </div>
 
                             <div className='step__term'>
-                                <p className='step__description'>
+                                <p className='stepper__step-description'>
                                     Termin odbioru:
                                 </p>
 
                                 <label htmlFor="date">
                                     Data
-                                    <input type="text" name="date" className="stepper__custom-input input--final-box" />
+                                    <input type="text" name="date" className="stepper__custom-input input--final-box" value={inputValue.date} onChange={handleInput}/>
                                 </label>
 
                                 <label htmlFor="hour">
                                     Godzina
-                                    <input type="text" name="hour" className="stepper__custom-input input--final-box" />
+                                    <input type="text" name="hour" className="stepper__custom-input input--final-box" value={inputValue.hour} onChange={handleInput}/>
                                 </label>
 
                                 <label htmlFor="notes">
                                     Uwagi <br/> 
                                     dla kuriera
-                                    <input type="text" name="notes" className="stepper__custom-input input--final-box" />
+                                    <input type="text" name="notes" className="stepper__custom-input input--final-box" value={inputValue.notes} onChange={handleInput}/>
                                 </label>
                             </div>
                         </div>
@@ -283,7 +330,7 @@ export function Stepper(){
                             Podsumowanie Twojej darowizny
                         </h3>
 
-                        <p className='step__description'>
+                        <p className='stepper__step-description'>
                             Oddajesz:
                         </p>
 
@@ -297,7 +344,7 @@ export function Stepper(){
 
                         <div className='step__last-box'>
                             <div className='step__address'>
-                                <p className='step__description'>
+                                <p className='stepper__step-description'>
                                     Adres odbioru:
                                 </p>
 
@@ -341,7 +388,7 @@ export function Stepper(){
                             </div>
 
                             <div className='step__term'>
-                                <p className='step__description'>
+                                <p className='stepper__step-description'>
                                     Termin odbioru:
                                 </p>
 
