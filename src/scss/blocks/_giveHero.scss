@@ -1,0 +1,9 @@
+$give-hero-bg: '../../assets/GiveHeroBg.png';
+
+.hero--give{
+    padding: 0;
+}
+
+.left--give{
+    background-image: url($give-hero-bg);
+}

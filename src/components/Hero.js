@@ -1,6 +1,5 @@
 import React from "react";
 import { Navbar } from "./Navbar";
-import { Footer } from "./Footer";
 import decoration from "../assets/Decoration.svg";
 
 export function Hero(){

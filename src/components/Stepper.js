@@ -25,6 +25,7 @@ export function Stepper(){
     const [checkboxes, setCheckboxes] = useState(INITIAL_CHECKBOXES)
 
     const [bagAmount, setBagAmount] = useState('wybierz')
+    const [location, setLocation] = useState('wybierz')
 
     function handleCheckbox(e){
         if(e.target.checked){
@@ -43,6 +44,11 @@ export function Stepper(){
     function handleBags(e){
         e.preventDefault();
         setBagAmount(e.target.getAttribute("data-value"));
+    }
+
+    function handleLocation(e){
+        e.preventDefault();
+        setLocation(e.target.getAttribute("data-value"));
     }
 
     function stepForward(e){
@@ -180,18 +186,18 @@ export function Stepper(){
                         <div className="custom-select__box">
                             <div className="custom-select" onClick={toggleLocation}>
                                 <div>
-                                    <p>wybierz</p>
+                                    <p>{location}</p>
                                     <img src={ showLocation===true ? arrowUp : arrowDown} alt="arrow down"/>
                                 </div>
                             </div>
 
                             { showLocation &&<div className='custom-options options--locations'>
-                                <p>Poznań</p>
-                                <p>Warszawa</p>
-                                <p>Kraków</p>
-                                <p>Wrocław</p>
-                                <p>Katowice</p>
-                                <p>Łódź</p>
+                                <p data-value="Poznań" onClick={handleLocation}>Poznań</p>
+                                <p data-value="Warszawa" onClick={handleLocation}>Warszawa</p>
+                                <p data-value="Kraków" onClick={handleLocation}>Kraków</p>
+                                <p data-value="Wrocław" onClick={handleLocation}>Wrocław</p>
+                                <p data-value="Katowice" onClick={handleLocation}>Katowice</p>
+                                <p data-value="Łódź" onClick={handleLocation}>Łódź</p>
                             </div>}
                         </div>
 

@@ -14,6 +14,12 @@ $stepper-form-bg: '../../assets/StepperFormBg.png';
     background-color: $color-yellow;
     width: 100%;
     padding: 25px 50px;
+
+    span{
+        display: block;
+        font-weight: bolder;
+        font-size: 2rem;
+    }
 }
 
 .stepper__container{
@@ -60,10 +66,6 @@ $stepper-form-bg: '../../assets/StepperFormBg.png';
     color: $color-black;
     font-size: 2.25rem;
     font-weight: bolder;
-
-    span{
-        display: block;
-    }
 }
 
 .step-help__boxes{
