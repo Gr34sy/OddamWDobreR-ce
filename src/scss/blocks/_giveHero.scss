@@ -7,3 +7,50 @@ $give-hero-bg: '../../assets/GiveHeroBg.png';
 .left--give{
     background-image: url($give-hero-bg);
 }
+
+.give-hero__description{
+    font-weight: lighter;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero__description--give{
+    padding-top: 100px;
+    padding-bottom: 60px;
+}
+
+.give-hero__boxes{
+    margin: 0 auto;
+    width: 85%;
+    height: 200px;
+}
+
+.give-hero__box{
+    position: relative;
+    display: inline-block;
+    padding-top: 10px;
+    width: 180px;
+    height: 180px;
+    text-align: center;
+
+    &::after{
+        content: '';
+        top: 0;
+        left: 0;
+        transform: translate(10%,0%) rotate(45deg);
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        border: 1px solid $color-black;
+    }
+
+    p{
+        font-size: 1.4rem;
+        font-weight: lighter;
+
+        &:first-child{
+            font-size: 2rem;
+        }
+    }
+}

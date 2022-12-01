@@ -12,7 +12,7 @@ export function GiveHero(){
             <div className="main__right">
                 <Navbar addClass="navbar--give" />
 
-                <div className="hero__description">
+                <div className="hero__description hero__description--give">
                     <h1 className="hero__title">Oddaj rzeczy, których już nie chcesz<br/>
                         POTRZEBUJĄCYM
                     </h1>
@@ -22,30 +22,33 @@ export function GiveHero(){
                     </figure>
                 </div>
 
-                <div className="hero__description--mobile">
-                    <h1 className="hero__title--mobile">
-                        Oddaj rzeczy, których już nie chcesz<br/>
-                        POTRZEBUJĄCYM
-                    </h1>
+                <p className="give-hero__description">
+                    Wystarczą 4 proste kroki:
+                </p>
 
-                    <div className="hero__stats--mobile">
-                        <div className="hero__stat">
-                            <div>
-                                0
-                            </div>
-                            <p>
-                                wspartych organizacji
-                            </p>
-                        </div>
+                <div className="give-hero__boxes">
+                    <div className="give-hero__box">
+                        <p>1</p>
+                        <p>Wybierz</p>
+                        <p>rzeczy</p>
+                    </div>
 
-                        <div className="hero__stat">
-                            <div>
-                                0
-                            </div>
-                            <p>
-                                oddanych worków
-                            </p>
-                        </div>
+                    <div className="give-hero__box">
+                        <p>2</p>
+                        <p>Spakuj je</p>
+                        <p>w worki</p>
+                    </div>
+
+                    <div className="give-hero__box">
+                        <p>3</p>
+                        <p>Wybierz</p>
+                        <p>fundację</p>
+                    </div>
+
+                    <div className="give-hero__box">
+                        <p>4</p>
+                        <p>Zamów</p>
+                        <p>kuriera</p>
                     </div>
                 </div>
 
