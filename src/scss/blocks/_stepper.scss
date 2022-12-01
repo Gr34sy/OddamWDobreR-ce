@@ -99,7 +99,12 @@ $stepper-form-bg: '../../assets/StepperFormBg.png';
         justify-content: space-between;
         gap: 10px;
     }
+
+    .label--notes{
+        align-items: flex-start; 
+    }
 }
+
 
 .step__address, .step__term{
     display: flex;
@@ -117,9 +122,13 @@ $stepper-form-bg: '../../assets/StepperFormBg.png';
     gap: 40px;
 }
 
-.summary-line--top{
+.summary-line--first{
     width: 50%;
     justify-content: flex-start;
+}
+
+.summary-line--last{
+    align-items: flex-start;
 }
 
 input.button.button--small.stepper__selected-btn{

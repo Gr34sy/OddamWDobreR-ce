@@ -27,14 +27,7 @@ export function Stepper(){
     const [bagAmount, setBagAmount] = useState('wybierz')
     const [location, setLocation] = useState('wybierz')
 
-    const INITIAL_PEOPLE = {
-        kids: false,
-        mothers: false,
-        homeless: false,
-        disabled: false,
-        elderly: false
-    }
-    const [people, setPeople] = useState(INITIAL_PEOPLE)
+    const [people, setPeople] = useState('')
 
     const INITIAL_INPUTS = {
         org: '',
@@ -83,19 +76,7 @@ export function Stepper(){
 
     function handlePeople(e){
         e.preventDefault();
-
-        const name = e.target.name;
-        if(people[name]===false){
-            setPeople({
-                ...people,
-                [name]: true
-            }) 
-        }else{
-            setPeople({
-                ...people,
-                [name]: false
-            }) 
-        }
+        setPeople(e.target.name);
     }
 
     function stepForward(e){
@@ -252,11 +233,11 @@ export function Stepper(){
                             Komu chcesz pomóc?
                         </p>
                         <div className='step-help__boxes'>
-                            <input type="button" className={people.kids===true ? 'button button--small stepper__selected-btn' : 'button button--small'} name="kids" value="dzieciom" onClick={handlePeople}/>
-                            <input type="button" className={people.mothers ? 'button button--small stepper__selected-btn' : 'button button--small'} name="mothers" value="samotnym matkom" onClick={handlePeople}/>
-                            <input type="button" className={people.homeless ? 'button button--small stepper__selected-btn' : 'button button--small'} name="homeless" value="bezdomnym" onClick={handlePeople}/>
-                            <input type="button" className={people.disabled ? 'button button--small stepper__selected-btn' : 'button button--small'} name="disabled" value="niepełnosprawnym" onClick={handlePeople}/>
-                            <input type="button" className={people.elderly ? 'button button--small stepper__selected-btn' : 'button button--small'} name="elderly" value="osobom starszym" onClick={handlePeople}/>
+                            <input type="button" className={people==='kids' ? 'button button--small stepper__selected-btn' : 'button button--small'} name="kids" value="dzieciom" onClick={handlePeople}/>
+                            <input type="button" className={people==='mothers' ? 'button button--small stepper__selected-btn' : 'button button--small'} name="mothers" value="samotnym matkom" onClick={handlePeople}/>
+                            <input type="button" className={people==='homeless' ? 'button button--small stepper__selected-btn' : 'button button--small'} name="homeless" value="bezdomnym" onClick={handlePeople}/>
+                            <input type="button" className={people==='disabled' ? 'button button--small stepper__selected-btn' : 'button button--small'} name="disabled" value="niepełnosprawnym" onClick={handlePeople}/>
+                            <input type="button" className={people==='elderly' ? 'button button--small stepper__selected-btn' : 'button button--small'} name="elderly" value="osobom starszym" onClick={handlePeople}/>
                         </div>
 
                         <p className='stepper__step-description'>
@@ -307,7 +288,7 @@ export function Stepper(){
 
                                 <label htmlFor="date">
                                     Data
-                                    <input type="text" name="date" className="stepper__custom-input input--final-box" value={inputValue.date} onChange={handleInput}/>
+                                    <input type="date" name="date" className="stepper__custom-input input--final-box" value={inputValue.date} onChange={handleInput}/>
                                 </label>
 
                                 <label htmlFor="hour">
@@ -315,10 +296,10 @@ export function Stepper(){
                                     <input type="text" name="hour" className="stepper__custom-input input--final-box" value={inputValue.hour} onChange={handleInput}/>
                                 </label>
 
-                                <label htmlFor="notes">
+                                <label htmlFor="notes" className='label--notes'>
                                     Uwagi <br/> 
                                     dla kuriera
-                                    <input type="text" name="notes" className="stepper__custom-input input--final-box" value={inputValue.notes} onChange={handleInput}/>
+                                    <textarea name="notes" rows="4" className="stepper__custom-input input--final-box" value={inputValue.notes} onChange={handleInput}/>
                                 </label>
                             </div>
                         </div>
@@ -334,18 +315,29 @@ export function Stepper(){
                             Oddajesz:
                         </p>
 
-                        <p className='stepper__summary-line summary-line--top'>
-                            <img src={shirtIcon} alt="shirt icon"/> 4 worki, ubrania w dobrym stanie, dzieciom
+                        <p className='stepper__summary-line summary-line--first'>
+                            <img src={shirtIcon} alt="shirt icon"/> {bagAmount && `${bagAmount} worki`}
+                            {checkboxes.reusableClothes && ', ubrania w dobrym stanie'}
+                            {checkboxes.rubbishClothes && ', ubrania w słabym stanie'}
+                            {checkboxes.toys && ', zabawki'}
+                            {checkboxes.books && ', książki'}
+                            {checkboxes.others && ', inne'}
+                 
+                            {people==='kids' && ', dzieciom'}
+                            {people==='mothers' && ', samotnym matkom'} 
+                            {people==='homeless' && ', bezdomnym'} 
+                            {people==='disabled' && ', niepełnosprawnym'}  
+                            {people==='elderly' && ', osobom starszym'}  
                         </p>
 
-                        <p className='stepper__summary-line summary-line--top'>
-                            <img src={recycleIcon} alt="shirt icon"/> dla lokalizacji: Warszawa
+                        <p className='stepper__summary-line summary-line--first'>
+                            <img src={recycleIcon} alt="shirt icon"/> dla lokalizacji: {location}
                         </p>
 
                         <div className='step__last-box'>
                             <div className='step__address'>
                                 <p className='stepper__step-description'>
-                                    Adres odbioru:
+                                    Adres odbioru: 
                                 </p>
 
                                 <div className='stepper__summary-line'>
@@ -353,7 +345,7 @@ export function Stepper(){
                                         Ulica
                                     </p>
                                     <p>
-                                        placeholder
+                                        {inputValue.street}
                                     </p>
                                 </div>
 
@@ -362,7 +354,7 @@ export function Stepper(){
                                         Miasto
                                     </p>
                                     <p>
-                                        placeholder
+                                        {inputValue.city}
                                     </p>
                                 </div>
 
@@ -372,7 +364,7 @@ export function Stepper(){
                                         pocztowy
                                     </p>
                                     <p>
-                                        placeholder
+                                        {inputValue.postcode}
                                     </p>
                                 </div>
 
@@ -382,7 +374,7 @@ export function Stepper(){
                                         telefonu
                                     </p>
                                     <p>
-                                        placeholder
+                                        {inputValue.phone}
                                     </p>
                                 </div>
                             </div>
@@ -397,7 +389,7 @@ export function Stepper(){
                                         Data
                                     </p>
                                     <p>
-                                        placeholder
+                                        {inputValue.date}
                                     </p>
                                 </div>
 
@@ -406,17 +398,17 @@ export function Stepper(){
                                         Godzina
                                     </p>
                                     <p>
-                                        placeholder
+                                        {inputValue.hour}
                                     </p>
                                 </div>
 
-                                <div className='stepper__summary-line'>
+                                <div className='stepper__summary-line summary-line--last'>
                                     <p>
                                         Uwagi<br/>
                                         dla kuriera
                                     </p>
                                     <p>
-                                        placeholder
+                                        {inputValue.notes}
                                     </p>
                                 </div>
 
