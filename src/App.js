@@ -5,10 +5,13 @@ import { Register } from './components/Register.js';
 import { Login } from './components/Login.js';
 import { Logout } from './components/Logout.js';
 import { Give } from './components/Give';
+import {Auth} from  './components/Authorization';
 
 function App() {
   return (
     <div className="App">
+
+      <Auth>
       <Router>
         <Routes>
           <Route path='/' element={<Navigate to="/home"/>}/>
@@ -19,6 +22,8 @@ function App() {
           <Route path='/give' element={<Give/>}/>
         </Routes>
       </Router>
+      </Auth>
+
     </div>
   );
 }

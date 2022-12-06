@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import app from "../base";
 import navMobileIcon from "../assets/navMobileIcon.png";
 
 export function Navbar({addClass}){
@@ -15,6 +16,7 @@ export function Navbar({addClass}){
             <div className="logging-buttons">
                 <NavLink to="/login" className="log__button">Zaloguj</NavLink>
                 <NavLink to="/register" className="log__button">Załóż konto</NavLink>
+                <NavLink to="/logout" className="log__button" onClick={()=>app.auth.signOut()}>Wyloguj</NavLink>
             </div>
             <ul className="navlist">
                 <li> <NavLink to="/home">Start</NavLink></li>
