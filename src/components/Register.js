@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 import { Link } from "react-router-dom";
+import app from "../base";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 
 import decoration from '../assets/Decoration.svg';
 
@@ -38,7 +40,7 @@ export function Register(){
         if(inputValue.email.includes('@')){
             tab[0] = true;
         }
-        if(inputValue.password>=6){
+        if(inputValue.password.length>=6){
             tab[1] = true;
         }
         if(inputValue.password===inputValue.repeatPassword){
@@ -57,14 +59,25 @@ export function Register(){
         }
     }
 
-    //obsługa formularza
+    //obsługa formularza i rejestracja użytkownika
     function handleRegister(e){
         e.preventDefault();
 
         if(validation()){
             setRegisterSuccess(true);
+
+            const auth = getAuth(app);
+            createUserWithEmailAndPassword(auth,inputValue.email,inputValue.password)
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error(errorCode, errorMessage);
+            });
         }
     }
+
+ 
+
 
     return(
         <>

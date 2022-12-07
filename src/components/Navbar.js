@@ -1,10 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
-import app from "../base";
 import navMobileIcon from "../assets/navMobileIcon.png";
+import { AuthContext } from "./Auth";
+import app from "../base";
+import { getAuth,  signOut } from "firebase/auth";
 
 export function Navbar({addClass}){
+    const {currentUser} = useContext(AuthContext);
+
     const navbarClasses = `navbar ${addClass}`
+
     return(
         <nav className={navbarClasses}>
             {/* mobile */}
@@ -14,9 +19,27 @@ export function Navbar({addClass}){
             
 
             <div className="logging-buttons">
-                <NavLink to="/login" className="log__button">Zaloguj</NavLink>
-                <NavLink to="/register" className="log__button">Załóż konto</NavLink>
-                <NavLink to="/logout" className="log__button" onClick={()=>app.auth.signOut()}>Wyloguj</NavLink>
+                {currentUser==='' && <NavLink to="/login" className="log__button">Zaloguj</NavLink>}
+                {currentUser==='' && <NavLink to="/register" className="log__button">Załóż konto</NavLink>}
+
+                {currentUser && 
+                <div className="logged-in__div">
+                    <p><span>Cześć</span>{currentUser}<span>!</span></p>
+                    <NavLink to="/give" className="log__button" >Oddaj rzeczy</NavLink>
+                    <NavLink to="/logout" className="log__button" 
+                    onClick={(e)=>{
+                    e.preventDefault();
+                    const auth = getAuth(app);
+                    signOut(auth)
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.error(errorCode, errorMessage);
+                    });
+                }}
+                >Wyloguj</NavLink>
+                </div>
+                }
             </div>
             <ul className="navlist">
                 <li> <NavLink to="/home">Start</NavLink></li>

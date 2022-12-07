@@ -1,12 +1,15 @@
 import React, {useState} from "react";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import app from "../base";
+import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 
 import decoration from '../assets/Decoration.svg';
 
 
 export function Login(){
+    const navigate = useNavigate();
     //staty inputów i errorów
     const [inputValue, setInputValue] = useState({
         email: '',
@@ -36,7 +39,7 @@ export function Login(){
         if(inputValue.email.includes('@')){
             tab[0] = true;
         }
-        if(inputValue.password.length>6){
+        if(inputValue.password.length>=6){
             tab[1] = true;
         }
         if(tab.includes(0)){
@@ -56,6 +59,16 @@ export function Login(){
 
         if(validation()){
             setLoginSuccess(true)
+            const auth = getAuth(app);
+            signInWithEmailAndPassword(auth, inputValue.email, inputValue.password)
+            .then(() => {
+                navigate("/home");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error(errorCode, errorMessage);
+            });
         }
     }
 

@@ -22,8 +22,7 @@ $give-hero-bg: '../../assets/GiveHeroBg.png';
 
 .give-hero__boxes{
     margin: 0 auto;
-    width: 85%;
-    height: 200px;
+    width: 88%;
 }
 
 .give-hero__box{
@@ -34,6 +33,11 @@ $give-hero-bg: '../../assets/GiveHeroBg.png';
     height: 180px;
     text-align: center;
 
+    @media(max-width: 1550px){
+        text-align: center;
+        width: 25%;
+    }
+
     &::after{
         content: '';
         top: 0;
@@ -43,6 +47,10 @@ $give-hero-bg: '../../assets/GiveHeroBg.png';
         width: 150px;
         height: 150px;
         border: 1px solid $color-black;
+
+        @media(max-width: 1550px){
+            display: none;
+        }
     }
 
     p{
