@@ -1,4 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "./Auth";
+
 import decoration from "../assets/Decoration.svg";
 import recycleIcon from "../assets/RecycleIcon.png";
 import lensIcon from "../assets/LensIcon.png";
@@ -11,6 +14,8 @@ import clickIcon from "../assets/ClickIcon.png";
 import calendarIcon from "../assets/CalendarIcon.png";
 
 export function SimpleSteps(){
+    const {currentUser} = useContext(AuthContext);
+
     return(
         <>
         <section className="simple-steps">
@@ -71,10 +76,10 @@ export function SimpleSteps(){
                 </div>
             </div>
 
-            <a href="#" className="button button--big">Oddaj  <br/> Rzeczy</a>
+            <Link to={currentUser!=='' ? "/give" : "/login"} className="button button--big">Oddaj<br/>Rzeczy</Link>
         </section>
          
-         {/* mobile view */}
+        {/* mobile view */}
         <section className="simple-steps--mobile">
             <h2 className="steps__title--mobile">Wystarczą 4 proste kroki</h2>
 

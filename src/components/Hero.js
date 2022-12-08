@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Link } from "react-router-dom";
 import { Navbar } from "./Navbar";
+import { AuthContext } from "./Auth";
+
 import decoration from "../assets/Decoration.svg";
 
 export function Hero(){
+    const {currentUser} = useContext(AuthContext);
+
     return(
         <>
         <main className="hero__main">
@@ -18,8 +23,8 @@ export function Hero(){
                         <img src={decoration} alt="text decoration" className="text-decoration"/>
                     </figure>
                     <div className="hero__button-box">
-                        <a href="#" className="button button--big">Oddaj  <br/> Rzeczy</a>
-                        <a href="#" className="button button--big">Zorganizuj  <br/> zbiórkę</a>
+                        <Link to={currentUser!=='' ? "/give" : "/login"}  className="button button--big">Oddaj  <br/> Rzeczy</Link>
+                        <Link to={currentUser!=='' ? "/give" : "/login"}  className="button button--big">Zorganizuj  <br/> zbiórkę</Link>
                     </div>
                 </div>
 

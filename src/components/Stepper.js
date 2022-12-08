@@ -1,10 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import { AuthContext } from './Auth';
+import app from "../base";
+import { collection, addDoc, getFirestore } from "firebase/firestore";
+
 import arrowDown from '../assets/ArrowDown.png';
 import arrowUp from '../assets/ArrowUp.png';
 import recycleIcon from '../assets/SmallRecycleIcon.png';
 import shirtIcon from '../assets/SmallShirtIcon.png';
 
 export function Stepper(){
+    //uzytkownik
+    const {currentUser} = useContext(AuthContext);
+
     //step state
     const [currentStep, setCurrentStep] = useState(1)
 
@@ -125,6 +132,41 @@ export function Stepper(){
         }
     }
 
+   
+    //przesłanie formularza do firestore
+    const handleStepperSubmit = async (e) => {
+        e.preventDefault();
+        setCurrentStep(6); 
+
+        const db = getFirestore(app);
+        try {
+            const docRef = await addDoc(collection(db, "oddawanie rzeczy"),{
+                user: currentUser,
+                bagAmount: bagAmount,
+                location: location,
+                people: people,
+                org: inputValue.org,
+                street: inputValue.street,
+                city: inputValue.city,
+                postcode: inputValue.postcode,
+                phone: inputValue.phone,
+                date: inputValue.date,
+                hour: inputValue.hour,
+                notes: inputValue.notes,
+                whatToGive: checkboxes
+                
+            });
+        }
+        catch (error) {
+            console.log(error);
+        }
+
+    }
+
+    useEffect(()=>{
+        setCurrentStep(1);
+    },[])
+
     return(
         <section className="stepper">
             { currentStep<=4 &&
@@ -143,7 +185,7 @@ export function Stepper(){
                     Krok {currentStep}/4
                 </p>}
 
-                <form className="stepper__form">
+                <form className="stepper__form" id="stepperForm" onSubmit={handleStepperSubmit}>
                     {currentStep===1 && 
                     <div className="stepper__step step--1">
                         <h3 className="stepper-form__title">
@@ -415,12 +457,17 @@ export function Stepper(){
                             </div>
                         </div>
                     </div>}
+
+                    {currentStep===6 && 
+                    <div className="stepper__step step--6">
+
+                    </div>}
                 </form>
 
                 <div className="stepper__buttons">
-                    { currentStep >1 && <input type="button"  className="button button--middle button--stepper" value="Wstecz" onClick={stepBackward}/>}
+                    { currentStep >1 && currentStep<6 && <input type="button"  className="button button--middle button--stepper" value="Wstecz" onClick={stepBackward}/>}
                     {  currentStep <5 && <input type="button" className="button button--middle button--stepper"  value="Dalej" onClick={stepForward}/>}
-                    {  currentStep===5 && <input type="submit" className="button button--middle button--stepper"  value="Potwierdzam" />}
+                    {  currentStep===5 && <input type="submit" form="stepperForm" className="button button--middle button--stepper"  value="Potwierdzam" />}
                 </div>
             </div>
         </section>
