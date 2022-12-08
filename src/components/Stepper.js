@@ -7,6 +7,7 @@ import arrowDown from '../assets/ArrowDown.png';
 import arrowUp from '../assets/ArrowUp.png';
 import recycleIcon from '../assets/SmallRecycleIcon.png';
 import shirtIcon from '../assets/SmallShirtIcon.png';
+import decoration from '../assets/Decoration.svg';
 
 export function Stepper(){
     //uzytkownik
@@ -460,7 +461,10 @@ export function Stepper(){
 
                     {currentStep===6 && 
                     <div className="stepper__step step--6">
-
+                        <h3 className="stepper-form__title">
+                            Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie informacje o odbiorze.
+                        </h3>
+                        <img src={decoration} alt="text decoration"/>
                     </div>}
                 </form>
 
