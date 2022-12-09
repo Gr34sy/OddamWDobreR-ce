@@ -1,39 +1,56 @@
 $stepper-form-bg: '../../assets/StepperFormBg.png';
 
 .stepper{
-    background-color: $color-grey-opacity;
-
     .button{
         background-color: transparent;
         font-family: $font-base;
         text-transform: capitalize;
+    }
+
+    @media(min-width: 1250px){
+        background-color: $color-grey-opacity;
     }
 }
 
 .stepper__header{
     background-color: $color-yellow;
     width: 100%;
-    padding: 40px 80px;
+    padding: 25px;
+
+    @media(min-width: 750px){
+        padding: 40px 80px;
+    }
 
     span{
         display: block;
         font-weight: bolder;
-        font-size: 2rem;
+        font-size: 1.5rem;
+
+        @media(min-width: 750px){
+            font-size: 2rem;
+        }
     }
 }
 
 .stepper__container{
     width: 100%;
-    height: 85vh;
-    padding: 25px 50px;
-    background-image: url($stepper-form-bg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    padding: 25px 25px 0 25px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    @media(min-width: 750px){
+        padding: 20px 50px;
+    }
+
+    @media(min-width:1250px){
+        background-image: url($stepper-form-bg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        height: 85vh;
+    }
 }
 
 .stepper__current-step{
@@ -43,14 +60,23 @@ $stepper-form-bg: '../../assets/StepperFormBg.png';
 
 .stepper__buttons{
     margin-top: auto;
-    width: 50%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 20px;
+
+    @media(min-width: 1250px){
+        width: 50%;
+    }
 }
 
 .stepper__form{
-    width: 60%;
+    width: 100%;
     height: 80%;
+
+    @media(min-width: 1250px){
+        width: 60%;
+    }
 }
 
 .stepper__step{
@@ -81,8 +107,12 @@ $stepper-form-bg: '../../assets/StepperFormBg.png';
 .stepper-form__title{
     width: 100%;
     color: $color-black;
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     font-weight: bolder;
+
+    @media(min-width: 750px){
+        font-size: 2.25rem;
+    }
 }
 
 .step-help__boxes{

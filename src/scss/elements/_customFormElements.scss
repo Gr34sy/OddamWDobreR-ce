@@ -1,19 +1,33 @@
 .label--checkbox{
     display: flex;
     align-items: center;
-    gap: 25px;
-    font-size: 1.5rem;
+    gap: 15px;
+    font-size: 1.2rem;
     font-family: $font-base;
     font-weight: lighter;
+
+    @media(min-width: 750px){
+        font-size: 1.5rem;
+        gap: 25px;
+    }
+
+    p{
+        width: 100%;
+    }
 }
 
 .custom-checkbox{
     appearance: none;
-    width: 35px;
-    height: 35px;
+    width: 15px;
+    height: 15px;
     background-color: transparent;
     border: 1px solid $color-black;
     cursor: pointer;
+
+    @media (min-width: 750px){
+        width: 35px;
+        height: 35px;
+    }
 }
 
 .custom-checkbox:checked{

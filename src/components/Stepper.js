@@ -195,27 +195,27 @@ export function Stepper(){
 
                         <label htmlFor="reusableClothes" className="label--checkbox">
                             <input type="checkbox" name="reusableClothes" className="custom-checkbox"  checked={checkboxes.reusableClothes} onChange={handleCheckbox}/>
-                            ubrania, które nadają się do ponownego użycia
+                            <p>ubrania, które nadają się do ponownego użycia</p>
                         </label>
 
                         <label htmlFor="rubbishClothes"className="label--checkbox">
                             <input type="checkbox" name="rubbishClothes" className="custom-checkbox" checked={checkboxes.rubbishClothes} onChange={handleCheckbox}/>
-                            ubrania, do wyrzucenia
+                            <p>ubrania, do wyrzucenia</p>
                         </label>
 
                         <label htmlFor="toys" className="label--checkbox">
                             <input type="checkbox" name="toys" className="custom-checkbox" checked={checkboxes.toys} onChange={handleCheckbox}/>
-                            zabawki
+                            <p>zabawki</p>
                         </label>
 
                         <label htmlFor="books" className="label--checkbox">
                             <input type="checkbox" name="books" className="custom-checkbox"  checked={checkboxes.books} onChange={handleCheckbox}/>
-                            książki
+                            <p>książki</p>
                         </label>
 
                         <label htmlFor="others" className="label--checkbox">
                             <input type="checkbox" name="others" className="custom-checkbox" checked={checkboxes.others} onChange={handleCheckbox}/>
-                            inne
+                            <p>inne</p>
                         </label>
                     </div>
                     }

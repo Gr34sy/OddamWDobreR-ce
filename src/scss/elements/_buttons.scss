@@ -35,11 +35,19 @@
     font-family: $font-base;
     font-weight: normal;
     font-size: 0.8rem;
-    padding-block: 1rem;
-    padding-inline: 4rem;
     color: $color-black;
     background-color: $color-white;
     border: 1px solid $color-black;
+
+    padding: 1rem 1rem; 
+
+    @media(min-width: 500px){
+        padding: 1rem 2.5rem; 
+    }
+
+    @media(min-width:1250px){
+        padding: 1rem 4rem;
+    }
 }
 
 .button--small{
@@ -61,6 +69,11 @@ input.button--small{
 .button--stepper{
     font-size: 1.5rem;
     font-weight: lighter;
+    margin-top: 20px;
+
+    @media(min-width:1250px){
+        margin-top: 0;
+    }
 }
 
 .logout-btn--mobile{
