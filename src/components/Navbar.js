@@ -14,7 +14,7 @@ export function Navbar({addClass}){
         <nav className={navbarClasses}>
             {/* mobile */}
             <figure className="mobileIcon__figure">
-                <img src={navMobileIcon} alt="shirt icon" className="navMobileIcon"/>
+                <NavLink to="/home"><img src={navMobileIcon} alt="shirt icon" className="navMobileIcon"/></NavLink>
             </figure>
             
 

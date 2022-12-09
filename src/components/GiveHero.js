@@ -12,7 +12,7 @@ export function GiveHero(){
             <div className="main__right">
                 <Navbar addClass="navbar--give" />
 
-                <div className="hero__description hero__description--give">
+                <div className="hero__description give-hero__title">
                     <h1 className="hero__title">Oddaj rzeczy, których już nie chcesz<br/>
                         POTRZEBUJĄCYM
                     </h1>

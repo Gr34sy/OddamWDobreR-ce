@@ -2,6 +2,8 @@ import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import { AuthContext } from "./Auth";
+import app from "../base";
+import { getAuth,  signOut } from "firebase/auth";
 
 import decoration from "../assets/Decoration.svg";
 
@@ -29,12 +31,18 @@ export function Hero(){
                 </div>
 
                 <div className="hero__description--mobile">
-                    <h1 className="hero__title--mobile">
+                    {currentUser!=='' && <h1 className="hero__title--mobile">
                         Zacznij pomagać!<br/>
                         Oddaj niechciane rzeczy w zaufane ręce
-                    </h1>
+                    </h1>}
 
-                    <div className="hero__stats--mobile">
+                    {currentUser==='' && <h1 className="hero__title--mobile">
+                        Masz w domu rzeczy, <br/>
+                        z którymi nie wiesz co zrobić?<br/>
+                        ODDAJ JE POTRZEBUJĄCYM
+                    </h1>}
+
+                    {currentUser!=='' &&<div className="hero__stats--mobile">
                         <div className="hero__stat">
                             <div>
                                 0
@@ -61,12 +69,26 @@ export function Hero(){
                                 zorganizowanych zbiórek
                             </p>
                         </div>
-                    </div>
+                    </div>}
                     
                     <div className="hero__button-box--mobile">
-                        <a href="#" className="button--mobile">oddaj rzeczy</a>
-                        <a href="#" className="button--mobile">zorganizuj zbiórkę</a>
+                        {currentUser!=='' &&<Link to="/give" className="button--mobile">oddaj rzeczy</Link>}
+                        {currentUser!=='' &&<Link to="/give" className="button--mobile">zorganizuj zbiórkę</Link>}
+                        {currentUser==='' &&<Link to="/login" className="button--mobile">zaloguj się</Link>}
+                        {currentUser==='' &&<Link to="/register" className="button--mobile">załóż konto</Link>}
                     </div>
+                    {currentUser!=='' &&<button className="button--mobile logout-btn--mobile"
+                    onClick={(e)=>{
+                        e.preventDefault();
+                        const auth = getAuth(app);
+                        signOut(auth)
+                        .catch((error) => {
+                            const errorCode = error.code;
+                            const errorMessage = error.message;
+                            console.error(errorCode, errorMessage);
+                        });
+                    }}
+                    >wyloguj </button>}
                 </div>
             </div>
         </main>

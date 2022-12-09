@@ -9,10 +9,6 @@
 }
 
 
-.navbar--logging{
-    padding: 50px 50px 0 0;
-}
-
 .logging__form{
     padding-top: 40px;
 }
@@ -46,11 +42,17 @@
 
 .logging__buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 
     width: 100%;
     margin-top: 50px;
     background-color: $color-white;
+
+    @media(min-width: 450px){
+        justify-content: space-between;
+    }
 }
 
 .logging__success{

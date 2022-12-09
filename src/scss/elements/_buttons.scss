@@ -10,7 +10,9 @@
 }
 
 .button--mobile{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 130px;
     padding: 15px;
     color: $color-white;
@@ -59,4 +61,9 @@ input.button--small{
 .button--stepper{
     font-size: 1.5rem;
     font-weight: lighter;
+}
+
+.logout-btn--mobile{
+    border: none;
+    cursor: pointer;
 }
