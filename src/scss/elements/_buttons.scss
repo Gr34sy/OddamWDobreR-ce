@@ -54,16 +54,25 @@
     background-color: transparent;
     border: 1px solid transparent;
     font-family: $font-base;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: lighter;
     color: $color-black;
     text-transform: capitalize;
+
+    @media(min-width:750px){
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
 }
 
 
 input.button--small{
     border: 1px solid $color-black;
     padding: 5px 20px;
+
+    @media(min-width:750px){
+        padding: 15px 60px;
+    }
 }
 
 .button--stepper{

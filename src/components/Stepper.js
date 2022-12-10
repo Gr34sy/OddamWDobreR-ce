@@ -301,23 +301,23 @@ export function Stepper(){
                                     Adres odbioru:
                                 </p>
 
-                                <label htmlFor="street">
+                                <label htmlFor="street" className='label--last-box'>
                                     Ulica
                                     <input type="text" name="street" className="stepper__custom-input input--final-box" value={inputValue.street} onChange={handleInput}/>
                                 </label>
 
-                                <label htmlFor="city">
+                                <label htmlFor="city" className='label--last-box'>
                                     Miasto
                                     <input type="text" name="city" className="stepper__custom-input input--final-box" value={inputValue.city} onChange={handleInput}/>
                                 </label>
 
-                                <label htmlFor="postcode">
+                                <label htmlFor="postcode" className='label--last-box'>
                                     Kod<br/>
                                     pocztowy
                                     <input type="text" name="postcode" className="stepper__custom-input input--final-box" value={inputValue.postcode} onChange={handleInput}/>
                                 </label>
 
-                                <label htmlFor="phone">
+                                <label htmlFor="phone" className='label--last-box'>
                                     Numer<br/>
                                     telefonu
                                     <input type="text" name="phone" className="stepper__custom-input input--final-box" value={inputValue.phone} onChange={handleInput}/>
@@ -329,12 +329,12 @@ export function Stepper(){
                                     Termin odbioru:
                                 </p>
 
-                                <label htmlFor="date">
+                                <label htmlFor="date" className='label--last-box'>
                                     Data
                                     <input type="date" name="date" className="stepper__custom-input input--final-box" value={inputValue.date} onChange={handleInput}/>
                                 </label>
 
-                                <label htmlFor="hour">
+                                <label htmlFor="hour" className='label--last-box'>
                                     Godzina
                                     <input type="text" name="hour" className="stepper__custom-input input--final-box" value={inputValue.hour} onChange={handleInput}/>
                                 </label>
@@ -377,7 +377,7 @@ export function Stepper(){
                             <img src={recycleIcon} alt="shirt icon"/> dla lokalizacji: {location}
                         </p>
 
-                        <div className='step__last-box'>
+                        <div className='step__last-box last-box--summary'>
                             <div className='step__address'>
                                 <p className='stepper__step-description'>
                                     Adres odbioru: 

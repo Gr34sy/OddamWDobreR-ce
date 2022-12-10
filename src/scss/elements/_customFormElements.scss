@@ -35,8 +35,12 @@
 }
 
 .custom-select__box{
-    font-size: 1.5rem;
+    font-size: 1rem;
     position: relative;
+    
+    @media(min-width: 750px){
+        font-size: 1.5rem;
+    }
 }
 
 .custom-select{
@@ -71,7 +75,7 @@
 }
 
 .custom-options{
-    width: 220px;
+    width: 150px;
     font-weight: lighter;
     cursor: pointer;
     padding: 10px;
@@ -80,14 +84,26 @@
     border: 1px solid $color-black;
     position: absolute;
     background-color: $color-grey-opacity;
+
+    @media(min-width: 750px){
+        width: 220px;
+    }
 }
 
 .options--bags{
-    margin-left: 310px;
+    margin-left: 48%;
+
+    @media(min-width: 750px){
+        margin-left: 310px;
+    }
 }
 
 .options--locations{
-    width: 300px;
+    width: 200px;
+
+    @media(min-width: 750px){
+        width: 300px;
+    }
 }
 
 .stepper__custom-input{
@@ -100,6 +116,38 @@
 
 .custom-input--org{
     width: 80%;
+}
+
+.label--last-box{
+    font-size: 1rem;
+    font-weight: lighter;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @media (min-width:750px){
+        font-size: 1.2rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px
+    }
+}
+
+.label--notes{
+    font-size: 1rem;
+    align-items: flex-start;
+    font-weight: lighter;
+
+    @media(min-width:750px) {
+        font-size: 1.2rem;
+    }
+    
+    textarea{
+        @media(min-width:750px) {
+            width: 100%;
+        }
+    }
 }
 
 .input--final-box{
