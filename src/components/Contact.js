@@ -5,7 +5,7 @@ import { Footer } from "./Footer";
 
 export function Contact(){
     return(
-        <section className="contact">
+        <section className="contact" id="contact">
             <div className="contact__container">
                 <h2 className="section-title contact__title">Skontaktuj się z nami</h2>
 

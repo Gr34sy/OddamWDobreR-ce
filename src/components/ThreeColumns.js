@@ -2,7 +2,7 @@ import React from "react";
 
 export function ThreeColumns(){
     return(
-        <section className="three-columns">
+        <section className="three-columns" id="three-columns">
             <div className="col-box">
                 <div className="col">
                     <span className="col__number">10</span>

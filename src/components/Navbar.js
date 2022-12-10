@@ -4,6 +4,7 @@ import navMobileIcon from "../assets/navMobileIcon.png";
 import { AuthContext } from "./Auth";
 import app from "../base";
 import { getAuth,  signOut } from "firebase/auth";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 export function Navbar({addClass}){
     const {currentUser} = useContext(AuthContext);
@@ -42,11 +43,11 @@ export function Navbar({addClass}){
                 }
             </div>
             <ul className="navlist">
-                <li> <NavLink to="/home">Start</NavLink></li>
-                <li><a href="#">O co chodzi?</a></li>
-                <li><a href="#">O nas</a></li>
-                <li><a href="#">Fundacja i organizacje</a></li>
-                <li><a href="#">Kontakt</a></li>
+                <NavLink to="/home" className="li-first"><li>Start</li></NavLink>
+                <Link to="home/three-columns" smooth={true} duration={1000} offset={-50}><li className="li">O co chodzi?</li></Link>
+                <Link to="about-us" smooth={true} duration={1000} offset={-50}><li className="li">O nas</li></Link>
+                <Link to="help" smooth={true} duration={1000} offset={-50}><li className="li">Fundacja i organizacje</li></Link>
+                <Link to="contact" smooth={true} duration={1000} offset={-50}><li className="li">Kontakt</li></Link>
             </ul>
         </nav>
     )

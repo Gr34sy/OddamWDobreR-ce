@@ -4,7 +4,7 @@ import decoration from "../assets/Decoration.svg";
 
 export function Help(){
     return(
-        <section className="help">
+        <section className="help" id="help">
             <h2 className="section-title help__title">Komu pomagamy?</h2>
             <figure className="help__figure">
                 <img src={decoration} alt="text decoration" />

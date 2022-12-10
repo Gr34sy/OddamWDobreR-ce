@@ -79,11 +79,11 @@
 .navlist{
     display: none;
 
-    li:first-child{
+    .li-first{
         border: 1px solid $color-black;
     }
 
-    li{
+    .li{
         cursor: pointer;
         border: 1px solid transparent;
 

@@ -4,7 +4,7 @@ import signature from "../assets/Signature.png";
 
 export function AboutUs(){
     return(
-        <section className="about-us">
+        <section className="about-us" id="about-us">
             <div className="about-us__left">
                 <h2 className="section-title about-us__title">
                     O nas
