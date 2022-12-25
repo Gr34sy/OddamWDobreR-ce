@@ -186,7 +186,7 @@ export function Stepper(){
                     Krok {currentStep}/4
                 </p>}
 
-                <form className="stepper__form" id="stepperForm" onSubmit={handleStepperSubmit}>
+                {currentStep!=6 &&<form className="stepper__form" id="stepperForm" onSubmit={handleStepperSubmit}>
                     {currentStep===1 && 
                     <div className="stepper__step step--1">
                         <h3 className="stepper-form__title">
@@ -458,21 +458,22 @@ export function Stepper(){
                             </div>
                         </div>
                     </div>}
+                </form>}
 
-                    {currentStep===6 && 
-                    <div className="stepper__step step--6">
+                {currentStep===6 && <div className="step--6">
+                    <div>
                         <h3 className="stepper-form__title">
-                            Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie informacje o odbiorze.
+                        Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie informacje o odbiorze.
                         </h3>
                         <img src={decoration} alt="text decoration"/>
-                    </div>}
-                </form>
+                    </div>
+                </div>}
 
-                <div className="stepper__buttons">
+                {currentStep!=6 && <div className="stepper__buttons">
                     { currentStep >1 && currentStep<6 && <input type="button"  className="button button--middle button--stepper" value="Wstecz" onClick={stepBackward}/>}
                     {  currentStep <5 && <input type="button" className="button button--middle button--stepper"  value="Dalej" onClick={stepForward}/>}
                     {  currentStep===5 && <input type="submit" form="stepperForm" className="button button--middle button--stepper"  value="Potwierdzam" />}
-                </div>
+                </div>}
             </div>
         </section>
     )
